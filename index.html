@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/mystyle.css">
+
+</head>
+
+<body>
+
+    <div class="calc-container">
+        <!-- Input & Output area of our calculator -->
+        <div class="inp">
+            <input type="text" name="display" id="monitor" placeholder="0">
+        </div>
+
+        <!-- Code for DEG and F-E buttons -->
+        <div class="btns">
+            <button class="btn" onclick="deg()">DEG</button>
+            <button class="btn" onclick="fe()">F-E</button>
+        </div>
+
+        <!-- Code for Memory operations buttons -->
+        <div class="btns">
+            <button class="btn m-opacity" onclick="clrmem()">MC</button>
+            <button class="btn m-opacity" onclick="rdmem()">MR</button>
+            <button class="btn" onclick="addmem()">M+</button>
+            <button class="btn" onclick="submem()">M-</button>
+            <button class="btn" onclick="savemem()">MS</button>
+        </div>
+
+        <!-- Code for Trignometry & functions operations -->
+        <div class="dropdown">
+            <select name="trignometry" id="trignometry" class="ddselect" onchange="trigno()">
+                <option disabled selected>⦝ Trignometry</option>
+                <option value="sin">sin</option>
+                <option value="cos">cos</option>
+                <option value="tan">tan</option>
+            </select>
+            <select name="functions" id="functions" class="ddselect" onchange="myfunction()">
+                <option disabled selected>⨍ functions</option>
+                <option value="abs">abs()</option>
+                <option value="floor">floor()</option>
+                <option value="asin">asin()</option>
+                <option value="acos">acos()</option>
+            </select>
+        </div>
+
+        <!-- Below all Code for different-different buttons -->
+        <div class="btns">
+            <button class="btn">2<sup>nd</sup></button>
+            <button onclick="pi();">π</button>
+            <button onclick="e()">e</button>
+            <button onclick="clearMonitor()">C</button>
+            <button onclick="backspace()"><i class="fa-solid fa-delete-left"></i></button>
+        </div>
+
+        <div class="btns">
+            <button onclick="pow()">x<sup>2</sup></button>
+            <button onclick="onebyx()">1/x</button>
+            <button onclick="absolute()">|x|</button>
+            <button onclick="exp()">exp</button>
+            <button class="btn" value="%">mod</button>
+        </div>
+
+        <div class="btns">
+            <button onclick="sqrt()"><sup>2</sup><i class="fa-solid fa-square-root-variable"></i></button>
+            <button class="btn" value="(">(</button>
+            <button class="btn" value=")">)</button>
+            <button onclick="factorial()">n!</button>
+            <button class="btn" value="/">÷</button>
+        </div>
+
+        <div class="btns">
+            <button class="btn" value="**">x<sup>y</sup></button>
+            <button class="numbtns btn" value="7" style="font-weight: bold;">7</button>
+            <button class="numbtns btn" value="8" style="font-weight: bold;">8</button>
+            <button class="numbtns btn" value="9" style="font-weight: bold;">9</button>
+            <button class="btn" value="*">X</button>
+        </div>
+
+        <div class="btns">
+            <button class="btn" onclick="tenx()">10<sup>x</sup></button>
+            <button class="numbtns btn" value="4" style="font-weight: bold;">4</button>
+            <button class="numbtns btn" value="5" style="font-weight: bold;">5</button>
+            <button class="numbtns btn" value="6" style="font-weight: bold;">6</button>
+            <button class="btn" value="-">-</button>
+        </div>
+
+        <div class="btns">
+            <button onclick="log()" value="log">log</button>
+            <button class="numbtns btn" value="1" style="font-weight: bold;">1</button>
+            <button class="numbtns btn" value="2" style="font-weight: bold;">2</button>
+            <button class="numbtns btn" value="3" style="font-weight: bold;">3</button>
+            <button class="btn" value="+">+</button>
+        </div>
+
+        <div class="btns">
+            <button onclick="ln()">ln</button>
+            <button class="numbtns btn" onclick="plusminus()">+/-</button>
+            <button class="numbtns btn" value="0" style="font-weight: bold;">0</button>
+            <button class="numbtns btn" value=".">.</button>
+            <button onclick="monitor.value=eval(monitor.value)">=</button>
+        </div>
+
+    </div>
+
+
+    <script src="js/myscript.js"></script>
+</body>
+
+</html>
